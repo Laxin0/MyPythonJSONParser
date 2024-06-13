@@ -22,7 +22,7 @@ class Parser():
     def parse_str(self, it: MyIter):
         name = ""
         it.next()
-        while True:
+        while not it.is_end():
             c = it.next()
             if c == "\"":
                 return name
@@ -32,7 +32,7 @@ class Parser():
         l = []
         it.next()
         
-        while True:
+        while not it.is_end():
             c = it.peek()
 
             if c == ']':
@@ -46,7 +46,7 @@ class Parser():
 
     def parse_obj(self, it: MyIter):
         obj = {}
-        while True:
+        while not it.is_end():
             c = it.peek()
 
             if c == '}':
@@ -69,7 +69,7 @@ class Parser():
             return True
         
     def parse_item(self, it: MyIter):
-        while True:
+        while not it.is_end():
             c = it.peek()
 
             if c == '[':
@@ -104,14 +104,14 @@ class Parser():
 
     def parse_number(self, it: MyIter):
         c: str
-        while True:
+        while not it.is_end():
             c = it.peek()
             if c.isdigit() or c in '-+.e':
                 break
             it.next()
 
         num = ''
-        while True:
+        while not it.is_end():
             if c.isdigit() or c in '-+.e':
                 num += it.next()
             else:
