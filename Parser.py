@@ -91,6 +91,8 @@ class Parser():
                 for _ in range(3):
                     it.next()
                 return None
+            else:
+                it.next()
             
     def parse_pair(self, it: MyIter):
         while it.peek() != "\"":
@@ -105,7 +107,7 @@ class Parser():
             num = ''
             c = it.peek()
             if c.isdigit() or c in '-+.e':
-                num = it.next()
+                num += it.next()
             else:
                 return float(num)
             
@@ -115,5 +117,5 @@ class Parser():
             text = f.read()
         it = MyIter(text)
 
-        self.parse_content(it)
+        return self.parse_obj(it)
         
