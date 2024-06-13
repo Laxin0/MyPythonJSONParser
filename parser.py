@@ -103,13 +103,20 @@ class Parser():
 
 
     def parse_number(self, it: MyIter):
+        c: str
         while True:
-            num = ''
             c = it.peek()
+            if c.isdigit() or c in '-+.e':
+                break
+            it.next()
+
+        num = ''
+        while True:
             if c.isdigit() or c in '-+.e':
                 num += it.next()
             else:
                 return float(num)
+            c = it.peek()
             
     def parse_file(self, path: str):
         text: str
