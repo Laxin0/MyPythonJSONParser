@@ -6,7 +6,7 @@ My stupid python json parser.
 
 # Details
 
-The `Parser` class provides `parse_file()` method that accept one srt parameter - path to json file. `parse_file()` method returns python dictionary representation of json file content.
+The `Parser` class provides `parse_file()` method that accept one str parameter - path to json file. `parse_file()` method returns python dictionary representation of json file content.
 
 # Usagde
 
