@@ -6,13 +6,13 @@ My stupid python json parser.
 
 # Details
 
-The `Parser` class provides `parse_file()` method that accept one str parameter - path to json file. `parse_file()` method returns python dictionary representation of json file content.
+The `MyParser` class provides `parse_file()` method that accept one str parameter - path to json file. `parse_file()` method returns python dictionary representation of json file content.
 
 # Usagde
 
 ```python
 
-parser = Parser()
+parser = MyParser()
 data = parser.parse_file("path/to/file.json")
 print(data)
 

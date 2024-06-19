@@ -16,7 +16,7 @@ class MyIter():
     def is_end(self) -> bool:
         return self.index >= self.lengh
     
-class Parser():
+class MyParser():
     # TODO: replace while True -> while not it.is_end()
 
     def parse_str(self, it: MyIter):
